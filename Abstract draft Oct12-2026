@@ -1,0 +1,7 @@
+Our proposed project is an interactive dashboard providing clean visuals for student proficiency gaps. Our primary data set is the Cuba Independent School District (CISD) Tribal Education Status Report for 2024-2025, including addtional datasets dating back to 2018 for regressional analysis (by this I just mean it looks back over the previous data, is this a good term to use?)
+Areas where gaps may exist include the following: test scores by subject and grade; attendance; 
+an interactive dashboard which identifies student performance gaps and recommends resource allocation based on 
+This data can be used to identify areas where more resources should be provided. Examples of resources include tutoring (based on student test scores in a certain grade level and subject), food/housing security (infered from absenteeism or incompletion of assignments), federal or state funding, ___**
+Additionally, the tool will identify areas where data is missing and push for resources that support better ata collection in these areas for future Education Status Reports.
+
+First, we will process and organize the data into graphs and 
