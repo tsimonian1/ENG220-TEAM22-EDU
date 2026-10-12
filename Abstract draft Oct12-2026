@@ -1,0 +1,17 @@
+Rural school districts often face limited resource access resulting in negative impacts for K-12 students. 
+To improve education access and student wellbeing in Cuba, NM, we propose an interactive dashboard visualizing 
+student proficiency gaps and identifying areas of resource allocation need. Our primary data set is the Cuba 
+Independent School District (CISD) Tribal Education Status Report for 2024-2025, and additional datasets from 
+2018 for historical trend analysis.
+
+Examples of gap areas include test scores (organized by subject and grade), attendance, and graduation rates. 
+This data will be used to identify areas where more resources should be provided. Examples of resources include 
+tutoring (based on student test scores in a certain grade level and subject), food/housing/water security (e.g. 
+inferred from absenteeism or incompletion of assignments), outreach (e.g. feedback requests from students and 
+parents about the school meeting their needs), infrastructure (such as electricity and internet access), federal 
+or state funding, and culturally-specific educational support (such as native language class).
+
+First, we will clean, normalize, and organize the raw data into interactive and user-friendly graphs. Next, we 
+will analyze it and produce graphs to visualize the identified resources of need based on the data. The tool will 
+also identify areas where data is chronically missing or masked and push for resources that support better data 
+collection in these areas for future Education Status Reports.
