@@ -7,19 +7,24 @@ st.set_page_config(page_title="Education Data Dashboard", layout="wide")
 
 st.title("Education Data Dashboard")
 
-st.text("This data is hoping to highlight the strengths of Cuba's school district as well as finding areas for improvement by utilizing "
-        "resources, accessibility, tutoring, funding, and more. These graphs are to be used within ENG220 Team 22's presentation.")
+st.subheader("This is an analysis of Cuba school data, this dashboard is hoping to highlight the strengths and areas "
+        "for improvement of Cuba's school district by utilizing"
+        "resources, accessibility, tutoring, funding, and more.")
+st.space("large")
+
 #ELA SCORES
 
 DISTRICT_NAME = "Cuba Independent School District Score"
 
-st.header("PARCC ELA Proficiency %(State vs. District)")
+st.header("ELA Proficiency %(State vs. District)")
 st.subheader("NM Standardized English Language Arts Test Scores ")
 
-df1 = pd.DataFrame({ "year": [2018, 2019, 2020, 2021, 2022, 
-        2023, 2024, 2025], 
-        "district_score": [16.83,19,19,19,8,11,15.82,18.04],
-        "state_score": [31.1,34,34,34,34,22,19.04,31.6]
+df1 = pd.DataFrame({ "year": [2010,2011,2012,2013,2014,2015,2016,2017,
+                       2018, 2019, 2020, 2021, 2022,2023, 2024, 2025], 
+        "district_score": [32.4,37.5,34.3,33.5,30.8,18.9,28.6,28,
+                           16.83,19,19,19,8,11,15.82,18.04],
+        "state_score": [57.4,49.8,50.8,50.6,49,33.3,37,37,
+                        31.1,34,34,34,34,22,19.04,31.6]
         })
 
 series = {      DISTRICT_NAME:
@@ -40,7 +45,7 @@ fig1.add_vrect(
 )
 
 for name, (col, color) in series.items():
-    # Main line, solid, for the full range
+    #Add colored lines.
     fig1.add_trace(go.Scatter(
         x=df1["year"], y=df1[col],
         mode="lines+markers",
@@ -56,24 +61,23 @@ fig1.update_layout(
 st.plotly_chart(fig1, use_container_width=True)
 st.caption(
     "Gray shaded years: standardized testing was not administered due to COVID-19. "
-    "Dashed lines show the 2019 score carried forward and are not actual results."
-    "All Cuba District Data is collected specifically from Native American"
-    "students. Native American students make up an average of 72.5 percent"
-    "of the school population across 2018-2025."
 )
 
 with st.expander("View data"):
     st.dataframe(df1)
-st.text("No Data taken in 2020 and 2021 due to COVID-19.")
-
+st.text("The Engligh Language Art scores for Cuba have never reached the proficiency level " \
+"as the state average. There are many complex reasons for why this could be the case.")
 #MATH SCORES
 
-st.header("PARCC MATH Proficiency %(State vs. District)")
+st.header("MATH Proficiency %(State vs. District)")
 st.subheader("NM Standardized Mathematics Test Scores")
 
-df2 = pd.DataFrame({ "year": [2018,2019,2020,2021,2022,2023, 2024, 2025], 
-        "district_score": [4,4,4,4,5,11,15.82,18.04],
-        "state_score": [21.6,20,20,20,25,22,19.04,31.6]
+df2 = pd.DataFrame({ "year": [2010,2011,2012,2013,2014,2015,2016,2017,
+                              2018,2019,2020,2021,2022,2023, 2024, 2025], 
+        "district_score": [43.2,31.1,30.6,25.1,25.4,5,9.3,7,
+                           4,4,4,4,5,11,15.82,18.04],
+        "state_score": [58.2,41.8,42.9,42,40.7,17.6,20.2,20,
+                        21.6,20,20,20,25,22,19.04,31.6]
         })
 
 fig2 = go.Figure()
@@ -104,15 +108,13 @@ fig2.update_layout(
 st.plotly_chart(fig2, use_container_width=True)
 st.caption(
     "Gray shaded years: standardized testing was not administered due to COVID-19. "
-    "Dashed lines show the 2019 score carried forward and are not actual results."
-    "All Cuba District Data is collected specifically from Native American"
-    "students. Native American students make up an average of 72.5 percent"
-    "of the school population across 2018-2025."
 )
 
 with st.expander("View data"):
     st.dataframe(df2)
 
+st.text("The Mathematics Scores for the Cuba School District follow a similar pattern" \
+" to the ELA score comparison. The level of proficiency dipped as low as 4%.")
 
 #GRAD RATES
 st.header("Graduation Rates (State Average vs. District)")
@@ -143,7 +145,10 @@ st.plotly_chart(fig3, use_container_width=True)
 
 with st.expander("View data"):
     st.dataframe(df3)
-    
+
+st.text("Despite the below average scores, the graduation rate of Cuba, NM" \
+" is higher than the state average. High graduation rates can be closely related" \
+" to community factors and school enviornment.")
 #ATTENDANCE
 
 st.header("Chronic Absenteeism(State vs.District)(%)")
@@ -177,3 +182,5 @@ st.plotly_chart(fig4, use_container_width=True)
 
 with st.expander("View data"):
     st.dataframe(df4)
+st.text("This graph displays the number of students that are absent from school " \
+"at an unacceptable rate.")
