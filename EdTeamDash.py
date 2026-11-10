@@ -8,7 +8,7 @@ st.set_page_config(page_title="Education Data Dashboard", layout="wide")
 st.title("Education Data Dashboard")
 
 st.subheader("This is an analysis of Cuba school data, this dashboard is hoping to highlight the strengths and areas "
-        "for improvement of Cuba's school district by utilizing"
+        "for improvement of Cuba's school district by utilizing "
         "resources, accessibility, tutoring, funding, and more.")
 st.space("large")
 
