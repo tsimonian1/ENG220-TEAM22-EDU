@@ -182,5 +182,5 @@ st.plotly_chart(fig4, use_container_width=True)
 
 with st.expander("View data"):
     st.dataframe(df4)
-st.text("This graph displays the number of students that are absent from school " \
-"at an unacceptable rate.")
+st.text("This graph displays the percent of students that are absent from school " \
+"for more than 10% of the total year.")
